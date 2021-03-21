@@ -1,4 +1,6 @@
 палка палка
 
+new text
+
 aaaaaaa
 qqqqq
