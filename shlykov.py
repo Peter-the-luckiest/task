@@ -70,7 +70,7 @@ def third():
     except ValueError:
         exit()
     t = np.arange(0, ti, 1/sfr)
-    amp = np.sin(fr/3.14*t)
+    amp = np.sin(fr*t*3.14*2)
     for i in range(len(t)):
         amp[i] = int(254 / 2 * (1 + amp[i]) + 1)
     plt.plot(t, amp)
@@ -80,8 +80,7 @@ def third():
     plt.show()
     for i in range(len(t)):
         x = num2dac(amp[i])
-        for j in range(8):
-            GPIO.output(ind[j], x[j])
+        GPIO.output(ind, x)
         time.sleep(1/sfr)
 
 
